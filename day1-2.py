@@ -1,0 +1,31 @@
+with open('20input-1-2.txt') as f:
+	lines = f.readlines()
+
+numsArr = [ int(str(line.strip())) for line in lines ]
+	
+print(numsArr)
+
+def printbalance(nums):
+	retArr = []
+	balance = 0
+	for i in range(len(nums)):
+		num1 = nums[i]
+		for j in range(len(nums)):
+			num2 = nums[j]
+			for k in range(len(nums)):
+				num3 = nums[k]
+	
+				if num1+num2+num3==2020:
+					balance=num1*num2*num3
+					retArr = [balance, num1, num2, num3]
+					return retArr
+	return retArr
+
+myArr = printbalance(numsArr)
+
+if myArr != []:
+	print(f"Your balance is {myArr[0]}.")
+	print(f"This was gotten by multiplying {myArr[1]}, {myArr[2]}, and {myArr[3]}.")
+else:
+	print("???")
+
